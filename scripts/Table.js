@@ -157,7 +157,7 @@ var TABLE = new (function () {
       delete PIXEL_MATRIX[y + "-" + x];
       return true;
     });
-  }
+  };
 
   this.checkForResolvableRows = function (changeCalcFlag) {
     return new Promise(function (resolve) {
@@ -205,5 +205,6 @@ var TABLE = new (function () {
         resolve(resolvedRowsCount);
       });
     });
-  }
+  };
+  
 })();

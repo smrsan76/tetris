@@ -4,6 +4,7 @@ window.onload = function () {
   LOADING.init();
   SCORE.init();
   LIFE.init();
+  HOLD.init();
   GAME.init();
   GAME.getNewShape();
   GAME.renderFrame();
@@ -43,6 +44,9 @@ window.onkeydown = function (e) {
     case KEY_S:
     case KEY_DOWN:
       GAME.speedItUp();
+      break;
+    case KEY_CTRL:
+      GAME.hold();
       break;
   }
 };

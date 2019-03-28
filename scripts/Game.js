@@ -23,6 +23,7 @@ var GAME = new (function () {
     TABLE.checkForResolvableRows()
       .then(function(resolvedRowsCount) {
         _self.getNewShape();
+        HOLD.unlock();
         if (_frameRate <= _speedFrameRate) return;
         _frameRate -= resolvedRowsCount * 10;
       });
@@ -90,7 +91,7 @@ var GAME = new (function () {
   }
 
   // Public Functions
-  this.init = function (gameTableElem) {
+  this.init = function () {
     // Load Elements
     _tableElem = document.getElementById("game-table");
     _pauseBtnIconElem = document.querySelector("#game-toggle-pause-btn .fa");
@@ -117,6 +118,7 @@ var GAME = new (function () {
     });
 
     TABLE.show();
+    HOLD.initShape(_getRandomShape());
 
     // Currect the toggler button icon
     toggleSoundFX();
@@ -182,6 +184,8 @@ var GAME = new (function () {
       SCORE.reset();
       LIFE.reset();
     }
+    HOLD.unlock();
+    HOLD.initShape(_getRandomShape());
     _self.getNewShape();
     _self.resume();
   };
@@ -193,6 +197,8 @@ var GAME = new (function () {
     TABLE.eraseAll();
     SCORE.reset();
     LIFE.reset();
+    HOLD.unlock();
+    HOLD.initShape(_getRandomShape());
     _frameRate = CONFIG.start.speed;
     _self.getNewShape();
   };
@@ -217,6 +223,19 @@ var GAME = new (function () {
     if (!_handShape) return;
     _handShape.rotateLeft();
     SOUND_FX.rotate();
+  };
+  
+  this.hold = function () {
+    if (HOLD.isLocked()) return;
+    var holdShape = HOLD.getShape();
+    holdShape.setX(_handShape.getX());
+    holdShape.setY(_handShape.getY());
+    if (!holdShape.isDrawable()) return;
+    _handShape.erase();
+    HOLD.hold(_handShape);
+    HOLD.lock();
+    _handShape = holdShape;
+    _handShape.paint();
   };
 
 })();

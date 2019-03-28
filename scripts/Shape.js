@@ -100,11 +100,15 @@ function Shape(typeName, matrix, colorIndex) {
   // Public Getter Functions
   this.getName = function () { return _name }
   this.getMatrix = function () { return _matrix.clone() }
-  this.getColor = function () { return _color }
-  this.getX = function () { return _x };
-  this.getY = function () { return _y };
-  this.getWidth = function () { return _width };
-  this.getHeight = function () { return _height };
+  this.getColorIndex = function () { return _colorIndex }
+  this.getX = function () { return _x }
+  this.getY = function () { return _y }
+  this.getWidth = function () { return _width }
+  this.getHeight = function () { return _height }
+  
+  // Public Setter Functions
+  this.setX = function (x) { _x = x }
+  this.setY = function (y) { _y = y }
 
   // Other Public Functions
   this.paint = function () {
@@ -193,5 +197,17 @@ function Shape(typeName, matrix, colorIndex) {
       PIXEL_MATRIX[y + "-" + x] = _colorIndex;
       return true;
     });
-  }
+  };
+  
+  this.isDrawable = function () {
+    var drawable = true;
+    
+    _iterateOverPixels(function (x, y) {
+      if (PIXEL_MATRIX[y + "-" + x]) return (drawable = false);
+      return true;
+    });
+    
+    return drawable;
+  };
+  
 }

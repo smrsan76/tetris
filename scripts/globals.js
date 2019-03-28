@@ -8,6 +8,8 @@ var SOUNDFX_FLAG = true;
 var IS_LOADING = false;
 
 var KEY_ENTER = 13;
+var KEY_CTRL = 17;
+
 var KEY_LEFT = 37;
 var KEY_UP = 38;
 var KEY_RIGHT = 39;

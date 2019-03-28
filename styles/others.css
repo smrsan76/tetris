@@ -1,8 +1,10 @@
+/***** TITLE *****/
 #game-title {
   text-align: center;
   text-decoration: underline;
 }
 
+/***** STATUS *****/
 #game-status {
   display: block;
   margin: 0 auto;
@@ -10,6 +12,7 @@
   text-align: center;
 }
 
+/***** TABLE *****/
 #game-table {
   display: none;
   position: relative;
@@ -19,6 +22,23 @@
   line-height: 0px;
 }
 
+.game-table-pixel {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  border: 0.005cm solid rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.1);
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+}
+
+.game-danger-row-pixel {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+/***** POINTS *****/
 #game-points-pane {
   display: block;
   position: absolute;
@@ -56,9 +76,37 @@
   font-size: 18px;
 }
 
-.game-table-pixel {
+/***** HOLD PIECE *****/
+#game-hold-piece {
+  display: block;
+  position: absolute;
+  top: 8px;
+  right: calc(100% + 2px);
+  width: 75px;
+  height: 100px;
+  background-color: #3F51B5;
+  border: 2px solid #7986CB;
+  color: #C5CAE9;
+  padding: 5px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+#game-hold-table {
+  display: block;
+  position: relative;
+  width: 48px;
+  margin: 4px auto 0 auto;
+  padding: 0;
+  line-height: 0px;
+}
+
+.game-hold-table-pixel {
   display: inline-block;
   vertical-align: middle;
+  width: 12px;
+  height: 12px;
   margin: 0;
   padding: 0;
   border: 0.005cm solid rgba(255,255,255,0.2);
@@ -68,10 +116,7 @@
   -moz-box-sizing: border-box !important;
 }
 
-.game-danger-row-pixel {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-
+/***** AUTHORS *****/
 #game-authors {
   display: block;
   position: fixed;
