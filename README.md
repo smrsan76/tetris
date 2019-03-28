@@ -8,7 +8,7 @@ This is one of my challenge submitions for Repl.it's
 ## :camera: ScreenShot
 
 <p align="center" >
-  <a href="https://Tetris--smrsan761.repl.co" title="Link to Game Page!" >
+  <a href="https://Tetris--smrsan761.repl.co" title="Link to Game Page!" target="_blank" >
     <img alt="@smrsan761/Tetris Screenshot" src="./Screenshots/Screenshot-from-2019-03-28-18-27-03.png" />
   </a>
 </p>
