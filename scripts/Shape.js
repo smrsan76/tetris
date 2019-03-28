@@ -204,6 +204,8 @@ function Shape(typeName, matrix, colorIndex) {
     
     _iterateOverPixels(function (x, y) {
       if (PIXEL_MATRIX[y + "-" + x]) return (drawable = false);
+      if (x >= CONFIG.table.cols) return (drawable = false);
+      if (y >= CONFIG.table.rows) return (drawable = false);
       return true;
     });
     
