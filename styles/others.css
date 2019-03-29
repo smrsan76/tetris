@@ -116,6 +116,46 @@
   -moz-box-sizing: border-box !important;
 }
 
+/***** Next *****/
+#game-next {
+  display: block;
+  position: absolute;
+  top: 116px;
+  left: calc(100% + 2px);
+  width: 75px;
+  height: 100px;
+  background-color: #4E342E;
+  border: 2px solid #795548;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 14px;
+}
+
+.game-next-shape {
+  display: block;
+  position: relative;
+  width: 48px;
+  margin: 4px auto 0 auto;
+  padding: 0;
+  line-height: 0px;
+}
+
+.game-next-shape-pixel {
+  display: inline-block;
+  vertical-align: middle;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0.005cm solid rgba(255,255,255,0.2);
+  background-color: rgba(0,0,0,0.1);
+  box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+}
+
 /***** AUTHORS *****/
 #game-authors {
   display: block;

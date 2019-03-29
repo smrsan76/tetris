@@ -119,6 +119,7 @@ var GAME = new (function () {
 
     TABLE.show();
     HOLD.initShape(_getRandomShape());
+    NEXT.push(_getRandomShape());
 
     // Currect the toggler button icon
     toggleSoundFX();
@@ -140,7 +141,8 @@ var GAME = new (function () {
   }
 
   this.getNewShape = function () {
-    _handShape = _getRandomShape();
+    _handShape = NEXT.pop();
+    NEXT.push(_getRandomShape());
     _handShape.paint();
   };
 
@@ -186,6 +188,8 @@ var GAME = new (function () {
     }
     HOLD.unlock();
     HOLD.initShape(_getRandomShape());
+    NEXT.empty();
+    NEXT.push(_getRandomShape());
     _self.getNewShape();
     _self.resume();
   };
@@ -199,6 +203,8 @@ var GAME = new (function () {
     LIFE.reset();
     HOLD.unlock();
     HOLD.initShape(_getRandomShape());
+    NEXT.empty();
+    NEXT.push(_getRandomShape());
     _frameRate = CONFIG.start.speed;
     _self.getNewShape();
   };

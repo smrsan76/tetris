@@ -5,6 +5,7 @@ window.onload = function () {
   SCORE.init();
   LIFE.init();
   HOLD.init();
+  NEXT.init();
   GAME.init();
   GAME.getNewShape();
   GAME.renderFrame();

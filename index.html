@@ -30,6 +30,7 @@
   <script src="./scripts/Score.js"></script>
   <script src="./scripts/Life.js"></script>
   <script src="./scripts/Hold.js"></script>
+  <script src="./scripts/Next.js"></script>
   <!--and finally-->
   <script src="./scripts/Game.js"></script>
 </head>
@@ -66,6 +67,7 @@
 
   <!--Game Table-->
 	<div id="game-table">
+    <!--Points-->
     <div id="game-points-pane" >
       <span id="game-points-sign">$</span>
       <span id="game-points-num" >0</span>
@@ -73,10 +75,15 @@
       <i id="game-lives-icon" class="fa fa-heart"></i>
       <span id="game-lives-num">0</span>
     </div>
+    
+    <!--Hold-piece-->
     <div id="game-hold-piece">
       <span><i id="game-hold-lock" class="fa fa-lock"></i> Hold</span>
       <div id="game-hold-table"></div>
     </div>
+    
+    <!--Next-->
+    <div id="game-next">Next</div>
   </div>
 
   <!--Authors-->

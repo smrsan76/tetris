@@ -11,7 +11,6 @@ var HOLD = new (function() {
   var _x = 0;
   var _y = 0;
   var _colorIndex = null;
-  var _pixElMatrix = [];
   var _isLocked = false;
   
   var _tableElem = null;
