@@ -118,7 +118,6 @@ var GAME = new (function () {
     });
 
     TABLE.show();
-    HOLD.initShape(_getRandomShape());
     NEXT.push(_getRandomShape());
 
     // Currect the toggler button icon
@@ -186,8 +185,7 @@ var GAME = new (function () {
       SCORE.reset();
       LIFE.reset();
     }
-    HOLD.unlock();
-    HOLD.initShape(_getRandomShape());
+    HOLD.empty();
     NEXT.empty();
     NEXT.push(_getRandomShape());
     _self.getNewShape();
@@ -201,8 +199,7 @@ var GAME = new (function () {
     TABLE.eraseAll();
     SCORE.reset();
     LIFE.reset();
-    HOLD.unlock();
-    HOLD.initShape(_getRandomShape());
+    HOLD.empty();
     NEXT.empty();
     NEXT.push(_getRandomShape());
     _frameRate = CONFIG.start.speed;
@@ -234,6 +231,7 @@ var GAME = new (function () {
   this.hold = function () {
     if (HOLD.isLocked()) return;
     var holdShape = HOLD.getShape();
+    if (!holdShape) holdShape = _getRandomShape();
     holdShape.setX(_handShape.getX());
     holdShape.setY(_handShape.getY());
     if (!holdShape.isDrawable()) return;

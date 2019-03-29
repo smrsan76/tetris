@@ -123,11 +123,6 @@ var HOLD = new (function() {
     _unlock();
   };
   
-  this.initShape = function (shape) {
-    _registerShape(shape);
-    _drawShape();
-  };
-  
   this.getShape = function () { return _shape };
   
   this.hold = function (shape) {
@@ -139,5 +134,11 @@ var HOLD = new (function() {
   this.lock = _lock;
   this.unlock = _unlock;
   this.isLocked = function () { return _isLocked };
+  
+  this.empty = function () {
+    _shape = null;
+    _removeTablePixels();
+    _unlock();
+  };
   
 })();
